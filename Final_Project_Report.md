@@ -20,7 +20,7 @@ Robotics Systems Simulation (URA601)
 
 ## 1. Abstract
 
-![Isometric View of Firefighting Robot](Images/Isometric%20view%20of%20robot%20design.png)
+![Isometric View of Firefighting Robot](images/Isometric%20view%20of%20robot%20design.png)
 
 This project presents the design, simulation, and control of a differential-drive firefighting mobile robot built using ROS 2 Humble. The primary objective is to implement an autonomous pipeline in which the robot drives to a precise target distance while simultaneously aiming its water nozzle—all driven by custom mathematical control algorithms without relying on pre-built navigation stacks.
 
@@ -55,9 +55,9 @@ The implementation follows a bottom-up layered approach. Each layer was built an
 ### 3.1 Robot Description — URDF/Xacro
 
 <div align="center">
-  <img src="Images/Front%20view%20of%20robot%20design.png" width="30%" />
-  <img src="Images/Side%20view%20of%20robot%20design.png" width="30%" />
-  <img src="Images/Top%20view%20of%20robot%20design.png" width="30%" />
+  <img src="images/Front%20view%20of%20robot%20design.png" width="30%" />
+  <img src="images/Side%20view%20of%20robot%20design.png" width="30%" />
+  <img src="images/Top%20view%20of%20robot%20design.png" width="30%" />
 </div>
 
 The robot is defined in `final_assembly.xacro` with multiple links and joints. The kinematic chain is:
@@ -91,7 +91,7 @@ The `pid_controller.py` node runs a dual-loop Proportional-Integral-Derivative (
 
 ### 3.4 Launch Architecture
 
-![Gazebo Warehouse Design](Images/Basic%20warehouse%20design.png)
+![Gazebo Warehouse Design](images/Basic%20warehouse%20design.png)
 
 The `gazebo.launch.py` file orchestrates the full system. Nodes are spawned sequentially to avoid race conditions.
 
@@ -199,9 +199,9 @@ Terminal output from the running `pid_controller` node confirming simultaneous d
 
 ### 6.3 SLAM Mapping Output
 
-![Working of LiDAR Sensor](Images/Working%20of%20lidar%20sensor.png)
+![Working of LiDAR Sensor](images/Working%20of%20lidar%20sensor.png)
 
-![Generated SLAM Occupancy Grid Map](Images/SLAM%20map.png)
+![Generated SLAM Occupancy Grid Map](images/SLAM%20map.png)
 
 The SLAM node successfully registered the sensor and began fusing data without dropping frames:
 

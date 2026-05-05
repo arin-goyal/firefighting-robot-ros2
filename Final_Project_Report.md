@@ -19,6 +19,9 @@ Robotics Systems Simulation (URA601)
 ---
 
 ## 1. Abstract
+
+![Isometric View of Firefighting Robot](Images/Isometric%20view%20of%20robot%20design.png)
+
 This project presents the design, simulation, and control of a differential-drive firefighting mobile robot built using ROS 2 Humble. The primary objective is to implement an autonomous pipeline in which the robot drives to a precise target distance while simultaneously aiming its water nozzle—all driven by custom mathematical control algorithms without relying on pre-built navigation stacks.
 
 The robot is described using URDF/Xacro and simulated in Gazebo. The control architecture comprises a `diff_drive` plugin for chassis movement and a layered `ros2_control` stack for nozzle articulation. Motion logic is handled by a custom dual-loop Proportional-Integral-Derivative (PID) Python node. Furthermore, a 2D LiDAR scanner is integrated to achieve Simultaneous Localization and Mapping (SLAM) using the `slam_toolbox`, allowing the robot to autonomously generate an occupancy grid of a simulated warehouse.
@@ -50,6 +53,13 @@ ROS 2 (Robot Operating System 2) is the industry-standard middleware for modern 
 The implementation follows a bottom-up layered approach. Each layer was built and validated independently before integration with the layer above it.
 
 ### 3.1 Robot Description — URDF/Xacro
+
+<div align="center">
+  <img src="Images/Front%20view%20of%20robot%20design.png" width="30%" />
+  <img src="Images/Side%20view%20of%20robot%20design.png" width="30%" />
+  <img src="Images/Top%20view%20of%20robot%20design.png" width="30%" />
+</div>
+
 The robot is defined in `final_assembly.xacro` with multiple links and joints. The kinematic chain is:
 
 ```text
@@ -80,6 +90,9 @@ The `pid_controller.py` node runs a dual-loop Proportional-Integral-Derivative (
 | **Aim PID** | Tilt nozzle upwards by 0.5 radians | Real-time joint angle from `/joint_states` | Publishes Float array on `/nozzle_velocity_controller/commands` |
 
 ### 3.4 Launch Architecture
+
+![Gazebo Warehouse Design](Images/Basic%20warehouse%20design.png)
+
 The `gazebo.launch.py` file orchestrates the full system. Nodes are spawned sequentially to avoid race conditions.
 
 ```text
@@ -185,6 +198,11 @@ Terminal output from the running `pid_controller` node confirming simultaneous d
 ```
 
 ### 6.3 SLAM Mapping Output
+
+![Working of LiDAR Sensor](Images/Working%20of%20lidar%20sensor.png)
+
+![Generated SLAM Occupancy Grid Map](Images/SLAM%20map.png)
+
 The SLAM node successfully registered the sensor and began fusing data without dropping frames:
 
 ```text

@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="warehouse">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- ========================================== -->
+    <!-- Outer Walls (Segmented to fix Texture Stretching) -->
+    <!-- ========================================== -->
+    
+    <!-- North Wall Segments -->
+    <model name="wall_north_1"><pose>-7.5 10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_north_2"><pose>-2.5 10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_north_3"><pose>2.5 10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_north_4"><pose>7.5 10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+
+    <!-- South Wall Segments -->
+    <model name="wall_south_1"><pose>-7.5 -10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_south_2"><pose>-2.5 -10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_south_3"><pose>2.5 -10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_south_4"><pose>7.5 -10 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>5 0.2 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>5 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+
+    <!-- East Wall Segments -->
+    <model name="wall_east_1"><pose>10 -7.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_east_2"><pose>10 -2.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_east_3"><pose>10 2.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_east_4"><pose>10 7.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+
+    <!-- West Wall Segments -->
+    <model name="wall_west_1"><pose>-10 -7.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_west_2"><pose>-10 -2.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_west_3"><pose>-10 2.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="wall_west_4"><pose>-10 7.5 1 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+
+    <!-- ========================================== -->
+    <!-- Office Room in Top Right Corner            -->
+    <!-- ========================================== -->
+    <model name="office_wall_vertical">
+      <pose>5 7.5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.2 5 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.2 5 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/PaintedWall</name></script></material></visual>
+      </link>
+    </model>
+    
+    <model name="office_wall_horizontal">
+      <pose>8.5 5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <!-- Leaves a 2-meter gap for an "open door" from x=5 to x=7 -->
+        <collision name="collision"><geometry><box><size>3 0.2 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>3 0.2 2</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/PaintedWall</name></script></material></visual>
+      </link>
+    </model>
+
+    <model name="office_table">
+      <pose>8 8 0.4 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>2 1 0.8</size></box></geometry></collision>
+        <visual name="top"><pose>0 0 0.4 0 0 0</pose><geometry><box><size>2 1 0.05</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material></visual>
+        <visual name="leg1"><pose>-0.9 -0.4 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.8</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="leg2"><pose>0.9 -0.4 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.8</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="leg3"><pose>-0.9 0.4 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.8</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="leg4"><pose>0.9 0.4 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.8</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+      </link>
+    </model>
+
+    <!-- ========================================== -->
+    <!-- Detailed Warehouse Shelving Racks          -->
+    <!-- ========================================== -->
+    <!-- Rack 1 -->
+    <model name="rack_1">
+      <pose>-6 2 1.5 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <!-- One solid collision box for perfect SLAM Mapping without trapping the LiDAR -->
+        <collision name="collision"><geometry><box><size>1.5 8 3</size></box></geometry></collision>
+        
+        <!-- Structural Shelves -->
+        <visual name="board1"><pose>0 0 -1.0 0 0 0</pose><geometry><box><size>1.5 8 0.1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="board2"><pose>0 0 0.0 0 0 0</pose><geometry><box><size>1.5 8 0.1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="board3"><pose>0 0 1.0 0 0 0</pose><geometry><box><size>1.5 8 0.1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole1"><pose>0.7 3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole2"><pose>-0.7 3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole3"><pose>0.7 -3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole4"><pose>-0.7 -3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+
+        <!-- Crates stored ON the shelves -->
+        <visual name="crate1"><pose>0 -2.0 -0.55 0 0 0.2</pose><geometry><box><size>0.8 0.8 0.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+        <visual name="crate2"><pose>0.1 1.5 0.45 0 0 -0.1</pose><geometry><box><size>0.8 0.8 0.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+      </link>
+    </model>
+
+    <!-- Rack 2 -->
+    <model name="rack_2">
+      <pose>-2 2 1.5 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1.5 8 3</size></box></geometry></collision>
+        
+        <!-- Structural Shelves -->
+        <visual name="board1"><pose>0 0 -1.0 0 0 0</pose><geometry><box><size>1.5 8 0.1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="board2"><pose>0 0 0.0 0 0 0</pose><geometry><box><size>1.5 8 0.1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="board3"><pose>0 0 1.0 0 0 0</pose><geometry><box><size>1.5 8 0.1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole1"><pose>0.7 3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole2"><pose>-0.7 3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole3"><pose>0.7 -3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+        <visual name="pole4"><pose>-0.7 -3.9 0 0 0 0</pose><geometry><box><size>0.1 0.1 3</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material></visual>
+
+        <!-- Crates stored ON the shelves -->
+        <visual name="crate3"><pose>-0.1 -1.0 -0.55 0 0 0</pose><geometry><box><size>0.8 0.8 0.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+        <visual name="crate4"><pose>0.2 3.0 0.45 0 0 0.5</pose><geometry><box><size>0.8 0.8 0.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+        <visual name="crate5"><pose>0 0 -0.55 0 0 0</pose><geometry><box><size>0.8 0.8 0.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+      </link>
+    </model>
+
+    <!-- ========================================== -->
+    <!-- Scattered Crates/Boxes in the open area    -->
+    <!-- ========================================== -->
+    <model name="loose_crate_1">
+      <pose>3 -3 0.5 0 0 0.5</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+      </link>
+    </model>
+
+    <model name="loose_crate_2">
+      <pose>4.5 -4 0.75 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1.5 1.5 1.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1.5 1.5 1.5</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+      </link>
+    </model>
+
+    <model name="loose_crate_3">
+      <pose>3 -4.5 0.4 0 0 0.2</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.8 0.8 0.8</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.8 0.8 0.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodPallet</name></script></material></visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

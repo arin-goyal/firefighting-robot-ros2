@@ -1,0 +1,11 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+
+    nozzle_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+nozzle_velocity_controller:
+  ros__parameters:
+    joints:
+      - Revolute 5

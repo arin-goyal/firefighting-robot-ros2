@@ -18,9 +18,56 @@ Robotics Systems Simulation (URA601)
 
 ---
 
+## DECLARATION
+We hereby declare that the project work titled "Mobile Robot Simulation and Vision-Based Object Tracking using ROS 2" is an authentic record of our own work carried out at Thapar Institute of Engineering and Technology as a requirement for the award of the degree of B.E. in Mechanical Engineering. 
+
+This project has been carried out under the guidance of Dr. Raja Rout (Professor, MED, TIET) during the academic session from January 2026 to May 2026.
+
+The work presented in this report has not been submitted elsewhere for the award of any other degree or diploma.
+
+**Date:** 05.05.2026  
+**Place:** Patiala
+
+<div style="page-break-after: always;"></div>
+
+## ACKNOWLEDGEMENT
+We would like to express our sincere gratitude to our project guide for their continuous support and guidance throughout this project. Their insights helped us understand ROS 2, simulation, and autonomous navigation systems effectively.
+
+We also thank our teammates for their collaboration and consistent efforts.
+
+<div style="page-break-after: always;"></div>
+
+## Table of Contents
+1. [Abstract](#1-abstract)
+2. [Introduction](#2-introduction)
+   - [2.1 Project Objectives](#21-project-objectives)
+   - [2.2 Tools and Technologies](#22-tools-and-technologies)
+3. [Methodology](#3-methodology)
+   - [3.1 Robot Description — URDF/Xacro](#31-robot-description--urdfxacro)
+   - [3.2 Gazebo and ros2_control Configuration](#32-gazebo-and-ros2_control-configuration)
+   - [3.3 Autonomous PID Control Execution Node](#33-autonomous-pid-control-execution-node)
+   - [3.4 Launch Architecture](#34-launch-architecture)
+4. [ROS 2 Computation Graph (rqt_graph)](#4-ros-2-computation-graph-rqt_graph)
+   - [4.1 Active Nodes](#41-active-nodes)
+   - [4.2 Key Topics and Actions](#42-key-topics-and-actions)
+5. [TF2 Transform Tree](#5-tf2-transform-tree)
+   - [5.1 Frame Hierarchy](#51-frame-hierarchy)
+   - [5.2 Frame Details](#52-frame-details)
+   - [5.3 TF2 in the Mapping Pipeline](#53-tf2-in-the-mapping-pipeline)
+6. [Results and Outputs](#6-results-and-outputs)
+   - [6.1 System Startup Verification](#61-system-startup-verification)
+   - [6.2 PID Execution Output](#62-pid-execution-output)
+   - [6.3 SLAM Mapping Output](#63-slam-mapping-output)
+   - [6.4 Issues Encountered and Resolved](#64-issues-encountered-and-resolved)
+7. [Project Structure](#7-project-structure)
+8. [Conclusion](#8-conclusion)
+9. [References](#9-references)
+
+<div style="page-break-after: always;"></div>
+
 ## 1. Abstract
 
-![Isometric View of Firefighting Robot](images/Isometric%20view%20of%20robot%20design.png)
+![Isometric View of Firefighting Robot](images/Isometric_view_of_robot_design.png)
 
 This project presents the design, simulation, and control of a differential-drive firefighting mobile robot built using ROS 2 Humble. The primary objective is to implement an autonomous pipeline in which the robot drives to a precise target distance while simultaneously aiming its water nozzle—all driven by custom mathematical control algorithms without relying on pre-built navigation stacks.
 
@@ -55,9 +102,9 @@ The implementation follows a bottom-up layered approach. Each layer was built an
 ### 3.1 Robot Description — URDF/Xacro
 
 <div align="center">
-  <img src="images/Front%20view%20of%20robot%20design.png" width="30%" />
-  <img src="images/Side%20view%20of%20robot%20design.png" width="30%" />
-  <img src="images/Top%20view%20of%20robot%20design.png" width="30%" />
+  <img src="images/Front_view_of_robot_design.png" width="30%" />
+  <img src="images/Side_view_of_robot_design.png" width="30%" />
+  <img src="images/Top_view_of_robot_design.png" width="30%" />
 </div>
 
 The robot is defined in `final_assembly.xacro` with multiple links and joints. The kinematic chain is:
@@ -91,7 +138,7 @@ The `pid_controller.py` node runs a dual-loop Proportional-Integral-Derivative (
 
 ### 3.4 Launch Architecture
 
-![Gazebo Warehouse Design](images/Basic%20warehouse%20design.png)
+![Gazebo Warehouse Design](images/Basic_warehouse_design.png)
 
 The `gazebo.launch.py` file orchestrates the full system. Nodes are spawned sequentially to avoid race conditions.
 
@@ -199,9 +246,9 @@ Terminal output from the running `pid_controller` node confirming simultaneous d
 
 ### 6.3 SLAM Mapping Output
 
-![Working of LiDAR Sensor](images/Working%20of%20lidar%20sensor.png)
+![Working of LiDAR Sensor](images/Working_of_lidar_sensor.png)
 
-![Generated SLAM Occupancy Grid Map](images/SLAM%20map.png)
+![Generated SLAM Occupancy Grid Map](images/SLAM_map.png)
 
 The SLAM node successfully registered the sensor and began fusing data without dropping frames:
 
